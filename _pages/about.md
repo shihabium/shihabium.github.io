@@ -32,4 +32,8 @@ What excites me most is making sense of complexity, turning curiosity into under
 I believe learning never stops — it's a journey, not a destination. Every day, I strive to grow a little more, think a little deeper, and explore a little further.
 My motto: *"Learn constantly, grow continuously."*
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+✉️ [Gmail](shihabium@gmail.com)  
+🌐 [GitHub](https://github.com/shihabium)  
+📞 +XXX-XXXXXXXXXX
+💬 "Curious mind. Constant learner."
+
