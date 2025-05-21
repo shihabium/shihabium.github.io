@@ -34,6 +34,5 @@ My motto: *"Learn constantly, grow continuously."*
 
 ✉️ [Gmail](shihabium@gmail.com)  
 🌐 [GitHub](https://github.com/shihabium)  
-📞 +XXX-XXXXXXXXXX
 💬 "Curious mind. Constant learner."
 
