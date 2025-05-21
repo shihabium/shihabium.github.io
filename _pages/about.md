@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: "Learning constantly, growing continuously." This page tells you who I am.
+subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:
   align: right
@@ -12,7 +12,7 @@ profile:
     <p>555 your office number</p>
     <p>123 your address street</p>
     <p>Your City, State 12345</p>
-    
+
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
@@ -27,13 +27,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I’m a student with a deep love for learning. I'm especially fascinated by the mysteries of science — quantum theories, the universe, and the unseen forces that shape our world.
-What excites me most is making sense of complexity, turning curiosity into understanding, and turning questions into discovery.
-I believe learning never stops — it's a journey, not a destination. Every day, I strive to grow a little more, think a little deeper, and explore a little further.
-My motto: *"Learn constantly, grow continuously."*
+Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
-Pekua, Cox's Bazar, Bangladesh  
-    ✉️ [Gmail](shihabium@gmail.com)  
-    🌐 [GitHub](https://github.com/shihabium)  
-    📞 +XXX-XXXXXXXXXX
-    💬 "Curious mind. Constant learner."
+Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+
+Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
