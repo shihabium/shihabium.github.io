@@ -24,15 +24,20 @@ export default function Hero() {
         {/* Left */}
         <FadeUp>
         <div className="max-w-2xl text-center lg:text-left">
+            <div className="inline-flex items-center gap-3 rounded-full border border-green-500/30 bg-green-500/10 px-5 py-2">
 
-          <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-5 py-2 text-sm tracking-[5px] text-violet-300">
-            FULL STACK • AI • SHOPIFY
-          </span>
+              <span className="h-3 w-3 animate-pulse rounded-full bg-green-400" />
+
+              <span className="text-xs font-semibold uppercase tracking-[3px] text-green-300 sm:text-sm">
+                Available For Freelance
+              </span>
+
+            </div>
 
           <h1 className="mt-8 text-6xl font-black leading-none text-white md:text-8xl">
             Hi,
             <br />
-            <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-violet-300 via-fuchsia-400 to-cyan-300 bg-clip-text text-transparent">
               I'm Shihab
             </span>
           </h1>
@@ -61,7 +66,7 @@ export default function Hero() {
 
           <a
             href="#projects"
-            className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-8 py-4 font-semibold text-white transition duration-300 hover:scale-105"
+            className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-8 py-4 font-semibold text-white transition duration-300 hover:scale-[1.03] hover:rotate-1"
           >
             View Projects
           </a>

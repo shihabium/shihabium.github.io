@@ -1,10 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import FadeUp from "@/components/motion/FadeUp";
+import ProjectModal from "@/components/ui/ProjectModal";
 import { projects } from "@/content/projects";
 
 export default function FeaturedProjects() {
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+
   return (
     <section
       id="projects"
@@ -69,6 +73,7 @@ export default function FeaturedProjects() {
 
                     <button
                       type="button"
+                      onClick={() => setSelectedProject(project)}
                       className="rounded-full bg-violet-600 px-7 py-3 font-semibold text-white shadow-xl transition hover:bg-violet-500"
                     >
                       View Project
@@ -142,7 +147,10 @@ export default function FeaturedProjects() {
         </div>
 
       </div>
-
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   );
 }

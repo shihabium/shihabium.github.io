@@ -46,7 +46,9 @@ export const metadata: Metadata = {
   creator: "Shihab",
 
   metadataBase: new URL("https://shihabium.vercel.app"),
-
+alternates: {
+  canonical: "https://shihabium.vercel.app",
+},
   openGraph: {
     title: "Shihab | Full Stack Developer",
     description:
@@ -59,6 +61,7 @@ export const metadata: Metadata = {
     locale: "en_US",
 
     type: "website",
+    images: ["/og-image.png"],
   },
 
   twitter: {
@@ -68,6 +71,7 @@ export const metadata: Metadata = {
 
     description:
       "Modern portfolio built with Next.js, Tailwind CSS and Framer Motion.",
+    images: ["/og-image.png"],
   },
 
   robots: {

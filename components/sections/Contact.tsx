@@ -2,6 +2,7 @@
 
 import { toast } from "sonner";
 import { useRef, useState } from "react";
+import FadeUp from "@/components/motion/FadeUp";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
@@ -44,62 +45,69 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-[#050816] py-32 text-white"
+      className="bg-[#050816] py-28 md:py-32 text-white"
     >
-      <div className="mx-auto max-w-5xl px-8">
+      <div className="mx-auto max-w-4xl px-8">
 
-        <div className="mb-16 text-center">
+        <FadeUp>
+          <div className="mb-16 text-center">
 
-          <p className="tracking-[6px] uppercase text-violet-400">
-            CONTACT
-          </p>
+            <p className="tracking-[6px] uppercase text-violet-400">
+              CONTACT
+            </p>
 
-          <h2 className="mt-4 text-5xl font-black">
-            Let's Work Together
-          </h2>
+            <h2 className="mt-4 text-5xl font-black">
+              Let's Build Something Amazing
+            </h2>
 
-        </div>
+            <p className="mx-auto mt-6 max-w-2xl leading-8 text-white/60">
+              Have a project in mind or just want to say hello?
+              Feel free to send me a message. I'll reply as soon as possible.
+            </p>
+          </div>
+        </FadeUp>
 
+      <FadeUp delay={0.2}> 
         <form
-          ref={form}
-          onSubmit={sendEmail}
-          className="space-y-6"
+            ref={form}
+            onSubmit={sendEmail}
+            className="space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition duration-300 hover:border-violet-500/30 sm:p-10"
         >
 
-          <input
-            type="text"
-            name="name"
-            required
-            placeholder="Your Name"
-            className="w-full rounded-2xl border border-white/10 bg-white/5 p-5 outline-none"
-          />
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="Your Name"
+              className="w-full rounded-2xl border border-white/10 bg-white/5 p-5 text-white placeholder:text-white/40 outline-none transition duration-300 focus:border-violet-500 focus:bg-white/10"
+            />
 
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="Your Email"
-            className="w-full rounded-2xl border border-white/10 bg-white/5 p-5 outline-none"
-          />
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Your Email"
+              className="w-full rounded-2xl border border-white/10 bg-white/5 p-5 text-white placeholder:text-white/40 outline-none transition duration-300 focus:border-violet-500 focus:bg-white/10"
+            />
 
-          <textarea
-            name="message"
-            required
-            rows={7}
-            placeholder="Write your message..."
-            className="w-full rounded-2xl border border-white/10 bg-white/5 p-5 outline-none"
-          />
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-10 py-4 font-bold"
-          >
-            {loading ? "Sending..." : "Send Message"}
-          </button>
-
-        </form>
-
+            <textarea
+              name="message"
+              required
+              rows={7}
+              placeholder="Write your message..."
+              className="w-full rounded-2xl border border-white/10 bg-white/5 p-5 text-white placeholder:text-white/40 outline-none transition duration-300 focus:border-violet-500 focus:bg-white/10"
+            />
+            <div className="flex justify-center">
+            <button
+              type="submit"
+              disabled={loading}
+              className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-10 py-4 font-bold transition duration-300 hover:scale-105 hover:shadow-xl hover:shadow-violet-500/30 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+            {loading ? "Sending Message..." : "Send Message"}
+            </button>
+            </div>
+          </form>
+        </FadeUp>
       </div>
     </section>
   );
