@@ -8,6 +8,7 @@ import FeaturedProjects from "@/components/sections/FeaturedProjects";
 import LatestBlog from "@/components/sections/LatestBlog";
 import Gallery from "@/components/sections/Gallery";
 import Contact from "@/components/sections/Contact";
+import BackToTop from "@/components/effects/BackToTop";
 import Footer from "@/components/sections/Footer";
 
 export default function Home() {
@@ -30,6 +31,8 @@ export default function Home() {
       <Gallery />
 
       <Contact />
+      
+      <BackToTop />
 
       <Footer />
     </>

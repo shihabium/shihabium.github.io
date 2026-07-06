@@ -1,60 +1,58 @@
+"use client";
+
+import {
+  FaGithub,
+  FaLinkedin,
+  FaFacebook,
+} from "react-icons/fa";
+
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#050816]">
-      <div className="mx-auto max-w-7xl px-8 py-16">
+    <footer className="border-t border-white/10 bg-[#050816] py-12 text-white">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-8 md:flex-row">
 
-        <div className="grid gap-12 md:grid-cols-3">
+        <div>
+          <h2 className="text-3xl font-black">
+            SHIHAB
+          </h2>
 
-          {/* Logo */}
-          <div>
-            <h2 className="text-4xl font-black text-white">
-              SHIHAB
-            </h2>
+          <p className="mt-3 max-w-md text-white/60">
+            Full Stack Developer passionate about building
+            modern web applications and AI-powered solutions.
+          </p>
+        </div>
 
-            <p className="mt-5 leading-8 text-white/60">
-              Full Stack Developer,
-              AI Enthusiast and Content Creator.
-            </p>
-          </div>
+        <div className="flex gap-5">
 
-          {/* Navigation */}
-          <div>
-            <h3 className="mb-5 text-xl font-bold text-white">
-              Navigation
-            </h3>
+          <a
+            href="https://github.com/shihabium"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-white/10 p-4 transition hover:border-violet-500 hover:bg-violet-500/10"
+          >
+            <FaGithub size={22} />
+          </a>
 
-            <ul className="space-y-3 text-white/60">
-              <li><a href="#about" className="hover:text-violet-400">About</a></li>
-              <li><a href="#skills" className="hover:text-violet-400">Skills</a></li>
-              <li><a href="#projects" className="hover:text-violet-400">Projects</a></li>
-              <li><a href="#blog" className="hover:text-violet-400">Blog</a></li>
-            </ul>
-          </div>
+          <a
+            href="#"
+            className="rounded-full border border-white/10 p-4 transition hover:border-violet-500 hover:bg-violet-500/10"
+          >
+            <FaLinkedin size={22} />
+          </a>
 
-          {/* Social */}
-          <div>
-            <h3 className="mb-5 text-xl font-bold text-white">
-              Connect
-            </h3>
-
-            <div className="flex gap-4">
-              {["GitHub", "Facebook", "LinkedIn"].map((item) => (
-                <button
-                  key={item}
-                  className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-white transition hover:bg-violet-600"
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
-          </div>
+          <a
+            href="#"
+            className="rounded-full border border-white/10 p-4 transition hover:border-violet-500 hover:bg-violet-500/10"
+          >
+            <FaFacebook size={22} />
+          </a>
 
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-8 text-center text-white/50">
-          © 2026 Shihab. All Rights Reserved.
-        </div>
+      </div>
 
+      <div className="mt-10 text-center text-sm text-white/40">
+        © {new Date().getFullYear()} Shihab. All rights reserved.
       </div>
     </footer>
   );

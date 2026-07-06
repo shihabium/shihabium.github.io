@@ -6,9 +6,9 @@ import { TypeAnimation } from "react-type-animation";
 import AuroraBackground from "../effects/AuroraBackground";
 
 const stats = [
-  { value: "4", label: "Projects" },
-  { value: "Pending", label: "Articles" },
-  { value: "9", label: "Years Learning" },
+  { value: "4+", label: "Projects" },
+  { value: "2023", label: "Started Coding" },
+  { value: "24/7", label: "Learning" },
 ];
 
 export default function Hero() {
@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="max-w-2xl text-center lg:text-left">
 
           <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-5 py-2 text-sm tracking-[5px] text-violet-300">
-            THINK • BUILD • SHARE
+            FULL STACK • AI • SHOPIFY
           </span>
 
           <h1 className="mt-8 text-6xl font-black leading-none text-white md:text-8xl">
@@ -41,9 +41,9 @@ export default function Hero() {
             <TypeAnimation
               sequence={[
                 "Full Stack Developer", 2000,
+                "Next.js Developer", 2000,
+                "Shopify Developer", 2000,
                 "AI Enthusiast", 2000,
-                "UI/UX Designer", 2000,
-                "Content Creator", 2000,
               ]}
               speed={50}
               repeat={Infinity}
@@ -51,24 +51,32 @@ export default function Hero() {
         </div>
 
           <p className="mt-8 text-lg leading-9 text-white/70">
-            Building beautiful digital products and sharing ideas
-            about AI, Programming, Business and Technology.
+            I build modern, responsive and high-performance web
+            applications using Next.js, TypeScript and Tailwind CSS.
+            Currently exploring AI, Shopify development and creating
+            real-world digital products.
           </p>
 
         <div className="mt-10 flex flex-wrap gap-5 justify-center lg:justify-start">
 
           <a
-            href="#blog"
+            href="#projects"
             className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-8 py-4 font-semibold text-white transition duration-300 hover:scale-105"
           >
-            Explore Blog
+            View Projects
           </a>
-
           <a
-            href="#projects"
+            href="/files/Shihab_CV.pdf"
+            download
+            className="rounded-full border border-violet-500 px-8 py-4 font-semibold text-violet-300 transition duration-300 hover:bg-violet-600 hover:text-white"
+          >
+            Download CV
+          </a>
+          <a
+            href="#contact"
             className="rounded-full border border-white/20 px-8 py-4 text-white transition duration-300 hover:bg-white/10"
           >
-            View Projects
+            Contact Me
           </a>
 
         </div>
@@ -139,6 +147,7 @@ export default function Hero() {
               width={520}
               height={700}
               priority
+              quality={100}
               className="rounded-[30px] object-cover transition duration-500 hover:scale-105"
             />
 

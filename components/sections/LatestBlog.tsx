@@ -1,29 +1,11 @@
-export default function LatestBlog() {
-  const blogs = [
-    {
-      title: "How I Started Learning AI",
-      date: "July 2026",
-      description:
-        "My journey into Artificial Intelligence and modern technologies.",
-    },
-    {
-      title: "Building My Dream Portfolio",
-      date: "July 2026",
-      description:
-        "How I designed my personal website using Next.js and Tailwind CSS.",
-    },
-    {
-      title: "Future of Programming",
-      date: "July 2026",
-      description:
-        "Thoughts about AI, software engineering and the future of developers.",
-    },
-  ];
+import { blogs } from "@/content/blog";
 
+export default function LatestBlog() {
   return (
     <section
-     id="blog"
-     className="bg-[#050816] py-28">
+      id="blog"
+      className="bg-[#050816] py-28"
+    >
       <div className="mx-auto max-w-7xl px-8">
 
         <p className="text-center uppercase tracking-[6px] text-violet-400">

@@ -1,12 +1,13 @@
+import Image from "next/image";
 export default function Gallery() {
-  const images = [
-    "https://picsum.photos/600/700?1",
-    "https://picsum.photos/600/500?2",
-    "https://picsum.photos/600/600?3",
-    "https://picsum.photos/600/800?4",
-    "https://picsum.photos/600/550?5",
-    "https://picsum.photos/600/650?6",
-  ];
+const images = [
+  "/images/gallery/1.png",
+  "/images/gallery/2.png",
+  "/images/gallery/3.png",
+  "/images/gallery/4.png",
+  "/images/gallery/5.png",
+  "/images/gallery/6.png",
+];
 
   return (
     <section
@@ -32,10 +33,15 @@ export default function Gallery() {
               key={index}
               className="overflow-hidden rounded-3xl border border-white/10 bg-white/5"
             >
-              <img
-                src={img}
-                className="h-[320px] w-full object-cover transition duration-500 hover:scale-110"
-              />
+            <Image
+              src={img}
+              alt={`Gallery ${index + 1}`}
+              width={600}
+              height={600}
+              loading="lazy"
+              quality={90}
+              className="h-[320px] w-full object-cover transition duration-500 hover:scale-110"
+            />
             </div>
           ))}
 

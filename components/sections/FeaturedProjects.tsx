@@ -1,33 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import FadeUp from "@/components/motion/FadeUp";
-
-const projects = [
-  {
-    title: "Personal Portfolio",
-    description:
-      "Modern portfolio built with Next.js, TypeScript, Tailwind CSS and Framer Motion.",
-    tech: ["Next.js", "TypeScript", "Tailwind"],
-    demo: "#",
-    github: "https://github.com/shihabium/shihabium.github.io",
-  },
-  {
-    title: "ALADIN Store",
-    description:
-      "Modern Shopify e-commerce store focused on premium products and user experience.",
-    tech: ["Shopify", "Liquid", "CSS"],
-    demo: "#",
-    github: "#",
-  },
-  {
-    title: "AI Assistant",
-    description:
-      "Python-based AI assistant with speech recognition and automation features.",
-    tech: ["Python", "AI", "Automation"],
-    demo: "#",
-    github: "#",
-  },
-];
+import { projects } from "@/content/projects";
 
 export default function FeaturedProjects() {
   return (
@@ -35,11 +10,10 @@ export default function FeaturedProjects() {
       id="projects"
       className="bg-[#050816] py-32 text-white"
     >
-      <div className="mx-auto max-w-[1600px] px-10">
+      <div className="mx-auto max-w-7xl px-8">
 
         <FadeUp>
           <div className="text-center">
-
             <p className="uppercase tracking-[6px] text-violet-400">
               PROJECTS
             </p>
@@ -52,51 +26,96 @@ export default function FeaturedProjects() {
               A selection of projects showcasing my skills in web development,
               AI and modern technologies.
             </p>
-
           </div>
         </FadeUp>
 
-        <div className="mt-20 grid gap-10 xl:grid-cols-3">
+        <div className="mt-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
 
           {projects.map((project, index) => (
-            <FadeUp key={project.title} delay={index * 0.15}>
 
-              <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition duration-300 hover:-translate-y-3 hover:border-violet-500">
+            <FadeUp
+              key={project.title}
+              delay={index * 0.15}
+            >
 
-                <div className="flex h-72 items-center justify-center bg-gradient-to-br from-violet-600/30 via-fuchsia-500/20 to-cyan-500/20">
+              <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-3 hover:border-violet-500 hover:shadow-2xl hover:shadow-violet-500/20">
 
-                  <span className="text-6xl">🚀</span>
+                {/* Image */}
+
+                <div className="relative h-72 overflow-hidden">
+
+                  {/* Category */}
+
+                  <div className="absolute left-5 top-5 z-20 rounded-full bg-violet-600/90 px-4 py-2 text-xs font-bold tracking-widest text-white backdrop-blur">
+                    {project.category}
+                  </div>
+
+                  {/* Image */}
+
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-75"
+                  />
+
+                  {/* Gradient */}
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-black/20 to-transparent" />
+
+                  {/* Hover Overlay */}
+
+                  <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100">
+
+                    <button
+                      type="button"
+                      className="rounded-full bg-violet-600 px-7 py-3 font-semibold text-white shadow-xl transition hover:bg-violet-500"
+                    >
+                      View Project
+                    </button>
+
+                  </div>
 
                 </div>
 
-                <div className="p-10">
+                {/* Content */}
+
+                <div className="p-8">
 
                   <h3 className="text-3xl font-bold">
                     {project.title}
                   </h3>
 
-                  <p className="mt-4 text-lg leading-9 text-white/60">
+                  <p className="mt-4 leading-8 text-white/60">
                     {project.description}
                   </p>
 
+                  {/* Tags */}
+
                   <div className="mt-6 flex flex-wrap gap-2">
 
-                    {project.tech.map((tech) => (
+                    {project.tags.map((tag) => (
+
                       <span
-                        key={tech}
+                        key={tag}
                         className="rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1 text-sm text-violet-300"
                       >
-                        {tech}
+                        {tag}
                       </span>
+
                     ))}
 
                   </div>
 
+                  {/* Buttons */}
+
                   <div className="mt-8 flex gap-4">
 
                     <a
-                      href={project.demo}
-                      className="rounded-full bg-violet-600 px-6 py-3 font-semibold transition hover:bg-violet-500"
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-6 py-3 font-semibold transition duration-300 hover:scale-105 hover:shadow-xl hover:shadow-violet-500/30"
                     >
                       Live Demo
                     </a>
@@ -105,7 +124,7 @@ export default function FeaturedProjects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full border border-white/20 px-6 py-3 transition hover:bg-white/10"
+                      className="rounded-full border border-white/20 px-6 py-3 transition duration-300 hover:border-violet-500 hover:bg-violet-500/10"
                     >
                       GitHub
                     </a>
@@ -117,11 +136,13 @@ export default function FeaturedProjects() {
               </div>
 
             </FadeUp>
+
           ))}
 
         </div>
 
       </div>
+
     </section>
   );
 }

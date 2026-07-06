@@ -4,28 +4,28 @@ import FadeUp from "@/components/motion/FadeUp";
 
 const experiences = [
   {
-    year: "2026",
-    title: "Building My Personal Brand",
+    year: "2023",
+    title: "Started Programming",
     description:
-      "Developing premium portfolio websites, AI tools and modern web experiences.",
-  },
-  {
-    year: "2025",
-    title: "Full Stack Development",
-    description:
-      "Learning Next.js, React, TypeScript and backend development.",
+      "Began my programming journey by learning HTML, CSS, JavaScript and problem solving.",
   },
   {
     year: "2024",
-    title: "Python & AI Journey",
+    title: "Python & Artificial Intelligence",
     description:
-      "Started learning Python, automation and Artificial Intelligence.",
+      "Learned Python, automation and explored Artificial Intelligence fundamentals.",
   },
   {
-    year: "2023",
-    title: "Programming Journey Started",
+    year: "2025",
+    title: "Full Stack Web Development",
     description:
-      "Began learning programming, problem solving and web technologies.",
+      "Built responsive websites using React, Next.js, TypeScript and Tailwind CSS.",
+  },
+  {
+    year: "2026",
+    title: "Portfolio & Shopify Development",
+    description:
+      "Developing premium portfolio websites, Shopify stores and modern AI-powered web applications.",
   },
 ];
 
@@ -45,11 +45,11 @@ export default function Experience() {
             </p>
 
             <h2 className="mt-4 text-5xl font-black">
-              My Journey
+              Career Journey
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-white/60">
-              Every year represents a new milestone in my learning and development.
+              A timeline of my learning journey, technical growth and the projects that shaped my development.
             </p>
 
           </div>

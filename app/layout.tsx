@@ -16,9 +16,64 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shihab | Full Stack Developer",
+  title: {
+    default: "Shihab | Full Stack Developer",
+    template: "%s | Shihab",
+  },
+
   description:
-    "Official portfolio of Shihab. Full Stack Developer, AI Enthusiast and Content Creator.",
+    "Personal portfolio of Shihab, a Full Stack Developer specializing in Next.js, React, TypeScript, Tailwind CSS and AI.",
+
+  keywords: [
+    "Shihab",
+    "Full Stack Developer",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Portfolio",
+    "Frontend Developer",
+    "Backend Developer",
+    "Artificial Intelligence",
+  ],
+
+  authors: [
+    {
+      name: "Shihab",
+    },
+  ],
+
+  creator: "Shihab",
+
+  metadataBase: new URL("https://shihabium.vercel.app"),
+
+  openGraph: {
+    title: "Shihab | Full Stack Developer",
+    description:
+      "Modern portfolio built with Next.js, Tailwind CSS and Framer Motion.",
+
+    url: "https://shihabium.vercel.app",
+
+    siteName: "Shihab Portfolio",
+
+    locale: "en_US",
+
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title: "Shihab | Full Stack Developer",
+
+    description:
+      "Modern portfolio built with Next.js, Tailwind CSS and Framer Motion.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -33,15 +88,15 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <ScrollProgress />
-
         <MouseGlow />
-        {/* <MouseGlow /> */}
+
         {children}
+
         <Toaster
           position="bottom-right"
           richColors
           theme="dark"
-          closeButton 
+          closeButton
         />
       </body>
     </html>

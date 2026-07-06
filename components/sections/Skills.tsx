@@ -1,26 +1,70 @@
+"use client";
+
+import FadeUp from "@/components/motion/FadeUp";
+
+import {
+  FaReact,
+  FaPython,
+  FaNodeJs,
+  FaGitAlt,
+} from "react-icons/fa";
+
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiJavascript,
+  SiGithub,
+} from "react-icons/si";
+
+const skills = [
+  { title: "Frontend", level: 95 },
+  { title: "Backend", level: 88 },
+  { title: "AI & Python", level: 90 },
+  { title: "UI / UX", level: 82 },
+];
+
+const tech = [
+  {
+    name: "Next.js",
+    icon: <SiNextdotjs size={38} />,
+  },
+  {
+    name: "React",
+    icon: <FaReact size={38} />,
+  },
+  {
+    name: "TypeScript",
+    icon: <SiTypescript size={38} />,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss size={38} />,
+  },
+  {
+    name: "JavaScript",
+    icon: <SiJavascript size={38} />,
+  },
+  {
+    name: "Python",
+    icon: <FaPython size={38} />,
+  },
+  {
+    name: "Node.js",
+    icon: <FaNodeJs size={38} />,
+  },
+  {
+    name: "Git",
+    icon: <FaGitAlt size={38} />,
+  },
+  {
+    name: "GitHub",
+    icon: <SiGithub size={38} />,
+  },
+  
+];
+
 export default function Skills() {
-  const skills = [
-    { title: "Frontend", level: 95 },
-    { title: "Backend", level: 88 },
-    { title: "AI & Python", level: 90 },
-    { title: "UI / UX", level: 82 },
-  ];
-
-  const tech = [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Tailwind CSS",
-    "JavaScript",
-    "Python",
-    "Node.js",
-    "Git",
-    "GitHub",
-    "VS Code",
-    "OpenAI",
-    "Linux",
-  ];
-
   return (
     <section
       id="skills"
@@ -28,67 +72,91 @@ export default function Skills() {
     >
       <div className="mx-auto max-w-7xl px-8">
 
-        <div className="mb-20 text-center">
-          <p className="tracking-[6px] uppercase text-violet-400">
-            MY SKILLS
-          </p>
+        <FadeUp>
+          <div className="mb-20 text-center">
 
-          <h2 className="mt-4 text-5xl font-black">
-            Technologies & Expertise
-          </h2>
-        </div>
+            <p className="uppercase tracking-[6px] text-violet-400">
+              MY SKILLS
+            </p>
 
-        <div className="grid gap-16 lg:grid-cols-2">
+            <h2 className="mt-4 text-5xl font-black">
+              Technologies & Expertise
+            </h2>
+
+          </div>
+        </FadeUp>
+
+        <div className="grid gap-20 lg:grid-cols-2">
 
           {/* Left */}
 
-          <div>
+          <FadeUp>
 
-            {skills.map((item) => (
+            <div>
 
-              <div key={item.title} className="mb-10">
+              {skills.map((item) => (
 
-                <div className="mb-3 flex justify-between">
+                <div
+                  key={item.title}
+                  className="mb-10"
+                >
 
-                  <h3 className="text-lg font-semibold">
-                    {item.title}
-                  </h3>
+                  <div className="mb-3 flex justify-between">
 
-                  <span className="text-violet-300">
-                    {item.level}%
-                  </span>
+                    <h3 className="text-lg font-semibold">
+                      {item.title}
+                    </h3>
+
+                    <span className="text-violet-300">
+                      {item.level}%
+                    </span>
+
+                  </div>
+
+                  <div className="h-4 rounded-full bg-white/10">
+
+                    <div
+                      className="h-4 rounded-full bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400"
+                      style={{
+                        width: `${item.level}%`,
+                      }}
+                    />
+
+                  </div>
 
                 </div>
 
-                <div className="h-4 rounded-full bg-white/10">
+              ))}
 
-                  <div
-                    className="h-4 rounded-full bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400"
-                    style={{
-                      width: `${item.level}%`,
-                    }}
-                  />
+            </div>
 
-                </div>
-
-              </div>
-
-            ))}
-
-          </div>
+          </FadeUp>
 
           {/* Right */}
 
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-2 gap-5 lg:grid-cols-3">
 
             {tech.map((item) => (
 
-              <div
-                key={item}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-violet-500 hover:bg-violet-500/10"
-              >
-                {item}
-              </div>
+              <FadeUp key={item.name}>
+
+                <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-violet-500 hover:bg-violet-500/10">
+
+                  <div className="mb-5 flex justify-center text-violet-400 transition duration-300 group-hover:scale-125">
+
+                    {item.icon}
+
+                  </div>
+
+                  <h3 className="font-semibold">
+
+                    {item.name}
+
+                  </h3>
+
+                </div>
+
+              </FadeUp>
 
             ))}
 
