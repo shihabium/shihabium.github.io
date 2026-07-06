@@ -13,7 +13,10 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#050816]">
+    <section
+      id="home"
+      className="relative min-h-screen overflow-hidden bg-[#050816]"
+    >
       <AuroraBackground />
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col-reverse items-center justify-center gap-20 px-8 pt-24 lg:flex-row">
@@ -34,7 +37,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <div className="mt-8 h-10 text-2xl font-semibold text-violet-300">
+        <div className="mt-8 h-10 text-2xl font-semibold text-violet-300">
             <TypeAnimation
               sequence={[
                 "Full Stack Developer", 2000,
@@ -45,33 +48,61 @@ export default function Hero() {
               speed={50}
               repeat={Infinity}
             />
-          </div>
+        </div>
 
           <p className="mt-8 text-lg leading-9 text-white/70">
             Building beautiful digital products and sharing ideas
             about AI, Programming, Business and Technology.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-5 justify-center lg:justify-start">
-            <button className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-8 py-4 font-semibold text-white hover:scale-105 transition">
-              Explore Blog
-            </button>
+        <div className="mt-10 flex flex-wrap gap-5 justify-center lg:justify-start">
 
-            <button className="rounded-full border border-white/20 px-8 py-4 text-white hover:bg-white/10 transition">
-              View Projects
-            </button>
-          </div>
+          <a
+            href="#blog"
+            className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-8 py-4 font-semibold text-white transition duration-300 hover:scale-105"
+          >
+            Explore Blog
+          </a>
 
-          <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
-            {["GitHub", "Facebook", "LinkedIn"].map((item) => (
-              <button
-                key={item}
-                className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-white hover:bg-violet-600 transition"
-              >
-                {item}
-              </button>
-            ))}
-          </div>
+          <a
+            href="#projects"
+            className="rounded-full border border-white/20 px-8 py-4 text-white transition duration-300 hover:bg-white/10"
+          >
+            View Projects
+          </a>
+
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
+
+          <a
+            href="https://github.com/shihabium"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-white transition duration-300 hover:bg-violet-600"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-white transition duration-300 hover:bg-blue-600"
+          >
+            Facebook
+          </a>
+
+          <a
+            href="https://linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-white transition duration-300 hover:bg-cyan-600"
+          >
+            LinkedIn
+          </a>
+
+        </div>
 
           {/* Stats */}
           <div className="mt-14 grid grid-cols-3 gap-4">
