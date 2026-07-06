@@ -1,8 +1,9 @@
 "use client";
 
+import FadeUp from "@/components/motion/FadeUp";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
-import AuroraBackground from "./AuroraBackground";
+import AuroraBackground from "../effects/AuroraBackground";
 
 const stats = [
   { value: "4", label: "Projects" },
@@ -18,6 +19,7 @@ export default function Hero() {
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col-reverse items-center justify-center gap-20 px-8 pt-24 lg:flex-row">
 
         {/* Left */}
+        <FadeUp>
         <div className="max-w-2xl text-center lg:text-left">
 
           <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-5 py-2 text-sm tracking-[5px] text-violet-300">
@@ -90,8 +92,10 @@ export default function Hero() {
           </div>
 
         </div>
+        </FadeUp>
 
         {/* Right */}
+        <FadeUp delay={0.3}>
         <div className="relative">
 
           <div className="absolute inset-0 rounded-[40px] bg-gradient-to-r from-violet-600/40 via-fuchsia-500/20 to-cyan-500/40 blur-3xl" />
@@ -110,6 +114,7 @@ export default function Hero() {
           </div>
 
         </div>
+        </FadeUp>
 
       </div>
     </section>

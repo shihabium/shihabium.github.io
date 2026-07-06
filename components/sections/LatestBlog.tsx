@@ -21,7 +21,9 @@ export default function LatestBlog() {
   ];
 
   return (
-    <section className="bg-[#050816] py-28">
+    <section
+     id="blog"
+     className="bg-[#050816] py-28">
       <div className="mx-auto max-w-7xl px-8">
 
         <p className="text-center uppercase tracking-[6px] text-violet-400">
