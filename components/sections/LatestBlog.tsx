@@ -4,8 +4,8 @@ export default function LatestBlog() {
   return (
     <section
       id="blog"
-      className="bg-[#050816] py-28"
-    >
+      className="relative py-32 text-white"
+>
       <div className="mx-auto max-w-7xl px-8">
 
         <p className="text-center uppercase tracking-[6px] text-violet-400">

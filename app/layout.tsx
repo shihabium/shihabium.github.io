@@ -3,6 +3,7 @@ import ScrollProgress from "@/components/effects/ScrollProgress";
 import { Toaster } from "sonner";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import BackgroundEffects from "@/components/effects/BackgroundEffects";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
   creator: "Shihab",
 
   metadataBase: new URL("https://shihabium.vercel.app"),
-alternates: {
+  alternates: {
   canonical: "https://shihabium.vercel.app",
 },
   openGraph: {
@@ -90,11 +91,28 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <ScrollProgress />
+      
+      <body className="relative min-h-full overflow-x-hidden bg-[#050816] text-white">
+
+        {/* Global Background */}
+
+        <BackgroundEffects />
+
+        {/* Mouse Glow */}
+
         <MouseGlow />
 
-        {children}
+        {/* Scroll Progress */}
+
+        <ScrollProgress />
+
+        {/* Website */}
+
+        <main className="relative z-10">
+          {children}
+        </main>
+
+        {/* Toast */}
 
         <Toaster
           position="bottom-right"
@@ -102,7 +120,9 @@ export default function RootLayout({
           theme="dark"
           closeButton
         />
+
       </body>
+
     </html>
   );
 }

@@ -8,13 +8,13 @@ export default function MouseGlow() {
   const mouseY = useMotionValue(-300);
 
   const x = useSpring(mouseX, {
-    stiffness: 120,
-    damping: 20,
+    stiffness: 100,
+    damping: 25,
   });
 
   const y = useSpring(mouseY, {
-    stiffness: 120,
-    damping: 20,
+    stiffness: 100,
+    damping: 25,
   });
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function MouseGlow() {
   return (
     <motion.div
       style={{ x, y }}
-      className="pointer-events-none fixed left-0 top-0 z-[1] h-[360px] w-[360px] rounded-full bg-violet-500/15 blur-[140px]"
+      className="pointer-events-none fixed left-0 top-0 z-[1] h-[320px] w-[320px] rounded-full bg-violet-500/15 blur-[120px]"
     />
   );
 }

@@ -50,8 +50,8 @@ export const projects = [
     "CSS",
     "E-commerce",
   ],
-  live: "#",
-  github: "#",
+  live: "https://aladin-store.myshopify.com",
+  github: "https://github.com/shihabium/",
 },
 
   {
@@ -77,7 +77,7 @@ export const projects = [
     "AI",
     "Desktop App",
   ],
-  live: "#",
-  github: "#",
+  live: "https://shihabium.vercel.app",
+  github: "https://github.com/shihabium/",
 },
 ];

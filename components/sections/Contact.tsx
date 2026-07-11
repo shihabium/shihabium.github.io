@@ -45,7 +45,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-[#050816] py-28 md:py-32 text-white"
+      className=" py-28 md:py-32 text-white"
     >
       <div className="mx-auto max-w-4xl px-8">
 
@@ -76,6 +76,7 @@ export default function Contact() {
 
             <input
               type="text"
+              aria-label="Your Name"
               name="name"
               required
               placeholder="Your Name"
@@ -84,6 +85,7 @@ export default function Contact() {
 
             <input
               type="email"
+              aria-label="Your Email"
               name="email"
               required
               placeholder="Your Email"
@@ -92,6 +94,7 @@ export default function Contact() {
 
             <textarea
               name="message"
+              aria-label="Your Message"
               required
               rows={7}
               placeholder="Write your message..."
@@ -100,6 +103,7 @@ export default function Contact() {
             <div className="flex justify-center">
             <button
               type="submit"
+              aria-label="Send Message"
               disabled={loading}
               className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-10 py-4 font-bold transition duration-300 hover:scale-105 hover:shadow-xl hover:shadow-violet-500/30 disabled:cursor-not-allowed disabled:opacity-50"
             >

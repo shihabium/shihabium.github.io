@@ -39,7 +39,7 @@ export default function Gallery() {
     <>
       <section
         id="gallery"
-        className="bg-[#050816] py-32 text-white"
+        className=" py-32 text-white"
       >
         <div className="mx-auto max-w-7xl px-8">
 
@@ -71,7 +71,7 @@ export default function Gallery() {
 
                 <Image
                   src={img}
-                  alt={`Gallery ${index + 1}`}
+                  alt={`Gallery image ${index + 1}`}
                   width={600}
                   height={600}
                   loading="lazy"
@@ -99,6 +99,7 @@ export default function Gallery() {
 
           <button
             onClick={() => setSelectedImage(null)}
+            aria-label="Close image preview"
             className="absolute right-6 top-6 rounded-full bg-black/60 p-3 text-white transition hover:bg-violet-600"
           >
             <X size={24} />

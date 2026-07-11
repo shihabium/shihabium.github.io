@@ -75,42 +75,50 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "border-b border-white/10 bg-[#050816]/80 backdrop-blur-xl"
-          : "bg-transparent"
-      }`}
+    className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 transition-all duration-500"
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
+      <div
+  className={`flex h-16 w-full max-w-6xl items-center justify-between rounded-full border px-6 transition-all duration-500 ${
+    scrolled
+      ? "border-white/10 bg-[#050816]/75 shadow-[0_8px_40px_rgba(139,92,246,0.15)] backdrop-blur-2xl"
+      : "border-white/5 bg-white/5 backdrop-blur-2xl"
+  }`}
+>
 
         {/* Logo */}
 
         <a
           href="#home"
+          aria-label="Go to Home"
           onClick={(e) => handleClick(e, "#home", "home")}
-          className="text-2xl font-black tracking-widest text-white transition hover:text-violet-400"
+          className="bg-gradient-to-r from-violet-300 via-fuchsia-300 to-cyan-300 bg-clip-text text-2xl font-black tracking-[6px] text-transparent transition duration-300 hover:opacity-90"
         >
           SHIHAB
         </a>
 
         {/* Desktop Menu */}
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-9 xl:flex">
           {navItems.map((item) => (
             <a
               key={item.id}
               href={item.href}
+              aria-current={
+            active === item.id
+              ? "page"
+              : undefined
+          }
               onClick={(e) => handleClick(e, item.href, item.id)}
               className={`relative text-sm font-medium transition-all duration-300 ${
                 active === item.id
-                  ? "text-violet-400"
-                  : "text-white/70 hover:text-white"
+                  ? "text-white"
+                  : "text-white/70 hover:text-violet-300"
               }`}
             >
               {item.name}
 
               <span
-                className={`absolute -bottom-2 left-0 h-[2px] rounded-full bg-violet-500 transition-all duration-300 ${
+                className={`absolute -bottom-2 left-0 h-[2px] rounded-full bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400 transition-all duration-300 ${
                   active === item.id
                     ? "w-full opacity-100"
                     : "w-0 opacity-0"
@@ -123,9 +131,13 @@ export default function Navbar() {
         {/* Mobile Button */}
 
         <button
-          aria-label="Toggle Menu"
           onClick={() => setMenuOpen(!menuOpen)}
-          className="text-white md:hidden"
+          aria-label={
+            menuOpen
+              ? "Close navigation menu"
+              : "Open navigation menu"
+          }
+          className="rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur-2xl transition hover:border-violet-500 lg:hidden"
         >
           {menuOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
@@ -134,7 +146,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
 
       <div
-        className={`overflow-hidden border-t border-white/10 bg-[#050816]/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
+        className={`absolute left-4 right-4 top-[72px] overflow-hidden rounded-3xl border border-white/10 bg-[#050816]/90 backdrop-blur-2xl transition-all duration-300 lg:hidden ${
           menuOpen ? "max-h-[500px]" : "max-h-0 border-none"
         }`}
       >
@@ -143,10 +155,10 @@ export default function Navbar() {
             key={item.id}
             href={item.href}
             onClick={(e) => handleClick(e, item.href, item.id)}
-            className={`block border-b border-white/5 px-8 py-5 transition ${
+            className={`block text-center border-b border-white/5 px-8 py-5 transition ${
               active === item.id
-                ? "bg-violet-500/10 text-violet-400"
-                : "text-white/70 hover:bg-white/5 hover:text-white"
+                ? "bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400/10 text-white"
+                : "text-white/70 hover:bg-white/5 hover:text-violet-300"
             }`}
           >
             {item.name}

@@ -1,11 +1,10 @@
 import dynamic from "next/dynamic";
-
 import Navbar from "@/components/layout/Navbar";
-
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Experience from "@/components/sections/Experience";
 import Skills from "@/components/sections/Skills";
+import PageBackground from "@/components/effects/PageBackground";
 import FeaturedProjects from "@/components/sections/FeaturedProjects";
 
 const LatestBlog = dynamic(
@@ -45,8 +44,10 @@ const BackToTop = dynamic(
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
+  <>
+    <Navbar />
+
+    <PageBackground>
 
       <Hero />
 
@@ -64,9 +65,12 @@ export default function Home() {
 
       <Contact />
 
-      <BackToTop />
-
       <Footer />
-    </>
+
+    </PageBackground>
+
+    <BackToTop />
+  </>
+
   );
 }

@@ -49,6 +49,7 @@ export default function ProjectModal({
   return (
     <div
       onClick={onClose}
+      aria-label="Close project details"
       className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 p-4 backdrop-blur-xl"
     >
       <div
@@ -156,6 +157,7 @@ export default function ProjectModal({
 
             <a
               href={project.live}
+              aria-label={`Open ${project.title} live demo`}
               target="_blank"
               rel="noopener noreferrer"
               className={`rounded-full px-8 py-4 font-semibold transition ${
@@ -169,6 +171,7 @@ export default function ProjectModal({
 
             <a
               href={project.github}
+              aria-label={`Open ${project.title} GitHub repository`}
               target="_blank"
               rel="noopener noreferrer"
               className={`rounded-full border px-8 py-4 transition ${

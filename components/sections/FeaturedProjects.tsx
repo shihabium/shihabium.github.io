@@ -12,7 +12,7 @@ export default function FeaturedProjects() {
   return (
     <section
       id="projects"
-      className="bg-[#050816] py-32 text-white"
+      className=" py-32 text-white"
     >
       <div className="mx-auto max-w-7xl px-8">
 
@@ -42,7 +42,9 @@ export default function FeaturedProjects() {
               delay={index * 0.15}
             >
 
-              <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-3 hover:border-violet-500 hover:shadow-2xl hover:shadow-violet-500/20">
+              <div
+  className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-3 hover:border-violet-500 hover:shadow-2xl hover:shadow-violet-500/20"
+>
 
                 {/* Image */}
 
@@ -60,6 +62,7 @@ export default function FeaturedProjects() {
                     src={project.image}
                     alt={project.title}
                     fill
+                    sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
                     className="object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-75"
                   />
 
@@ -73,6 +76,7 @@ export default function FeaturedProjects() {
 
                     <button
                       type="button"
+                      aria-label={`View details of ${project.title}`}
                       onClick={() => setSelectedProject(project)}
                       className="rounded-full bg-violet-600 px-7 py-3 font-semibold text-white shadow-xl transition hover:bg-violet-500"
                     >
@@ -85,19 +89,19 @@ export default function FeaturedProjects() {
 
                 {/* Content */}
 
-                <div className="p-8">
+                <div className="flex h-full flex-col p-8">
 
                   <h3 className="text-3xl font-bold">
                     {project.title}
                   </h3>
 
-                  <p className="mt-4 leading-8 text-white/60">
+                  <p className="mt-4 flex-1 leading-8 text-white/60">
                     {project.description}
                   </p>
 
                   {/* Tags */}
 
-                  <div className="mt-6 flex flex-wrap gap-2">
+                  <div className="mt-6 flex min-h-[72px] flex-wrap gap-2">
 
                     {project.tags.map((tag) => (
 
@@ -111,29 +115,33 @@ export default function FeaturedProjects() {
                     ))}
 
                   </div>
-
+                  
+                <div className="mt-auto">
                   {/* Buttons */}
 
-                  <div className="mt-8 flex gap-4">
+                  <div className="mt-8 flex flex-wrap items-center gap-4">
 
                     <a
                       href={project.live}
+                      aria-label={`Open ${project.title} live demo`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-6 py-3 font-semibold transition duration-300 hover:scale-105 hover:shadow-xl hover:shadow-violet-500/30"
-                    >
+                      className="flex-1 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-6 py-3 text-center font-semibold transition duration-300 hover:scale-105 hover:shadow-xl hover:shadow-violet-500/30"
+                     >
                       Live Demo
                     </a>
 
                     <a
                       href={project.github}
+                      aria-label={`View ${project.title} source code`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full border border-white/20 px-6 py-3 transition duration-300 hover:border-violet-500 hover:bg-violet-500/10"
-                    >
+                      className="flex-1 rounded-full border border-white/20 px-6 py-3 text-center transition duration-300 hover:border-violet-500 hover:bg-violet-500/10"
+                      >
                       GitHub
                     </a>
 
+                  </div>
                   </div>
 
                 </div>
